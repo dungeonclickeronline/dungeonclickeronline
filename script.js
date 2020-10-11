@@ -59,6 +59,8 @@ $("#logout").click(()=> {
         }
       });
 
+let myDatabase = firebase.database();
+
 
 var gameState = {
   gold: 0,
