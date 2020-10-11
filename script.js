@@ -64,7 +64,7 @@ var gameState = {
   level: 1,
   monDPS: 1,
   monsterHealth: 25,
-  position: "Neutral",
+  position: "Neutral"
 };
 
 var getSidekickCost = function(){
