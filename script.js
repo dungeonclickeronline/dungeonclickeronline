@@ -20,6 +20,7 @@ if (!uuid){
   uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
   localStorage.setItem("uuid", uuid);
 }
+ self.userName =  localStorage.getItem("uuid");
 console.log(uuid);
 
 const firebaseConfig = {
