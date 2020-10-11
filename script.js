@@ -28,6 +28,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+var google_provider = new firebase.auth.GoogleAuthProvider();
+
 $("#login").click(()=>{
   firebase.auth().signInWithRedirect(google_provider);
 });
