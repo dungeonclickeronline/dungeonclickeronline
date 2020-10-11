@@ -15,6 +15,10 @@
 // Player in attack or defend mode
 // Fixed Price Scaling in Defend and attack mode
 
+let self = this;
+    this.userName = `user-${uuid}`;
+
+    $('#uuid').text(`${this.userName}`);
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzpYXayWSL5Pf6lj2IFTj0qVIIUeGwmsg",
