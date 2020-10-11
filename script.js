@@ -15,24 +15,6 @@
 // Player in attack or defend mode
 // Fixed Price Scaling in Defend and attack mode
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCzpYXayWSL5Pf6lj2IFTj0qVIIUeGwmsg",
-  authDomain: "webappproject-7ac77.firebaseapp.com",
-  databaseURL: "https://webappproject-7ac77.firebaseio.com",
-  projectId: "webappproject-7ac77",
-  storageBucket: "webappproject-7ac77.appspot.com",
-  messagingSenderId: "372888286437",
-  appId: "1:372888286437:web:b812694cea4701b708d00c",
-  measurementId: "G-5EYN7R2PCW"
-};
-
-firebase.initializeApp(firebaseConfig);
-
-var google_provider = new firebase.auth.GoogleAuthProvider();
-
-$("#login").click(()=>{
-  firebase.auth().signInWithRedirect(google_provider);
-});
 
 let uuid = localStorage.getItem("uuid");
 if (!uuid){
