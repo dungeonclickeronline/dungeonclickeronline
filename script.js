@@ -15,6 +15,11 @@
 // Player in attack or defend mode
 // Fixed Price Scaling in Defend and attack mode
 
+let uuid = localStorage.getItem("uuid");
+if (!uuid){
+  uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
+  localStorage.setItem("uuid", uuid);
+}
 console.log(uuid);
 
 const firebaseConfig = {
