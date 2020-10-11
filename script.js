@@ -35,6 +35,17 @@ $("#login").click(()=>{
   firebase.auth().signInWithRedirect(google_provider);
 });
 
+ firebase.auth().onAuthStateChanged(user => {
+        if (!!user){
+            let splitname = user.displayName.split(" ");
+            if(splitname.length > 1) { 
+                self.userName = splitname[0] + ' ' + splitname[1].charAt(0);
+                console.log(self.userName);
+            }
+            $('#uuid').text(`${self.userName}`);
+        }
+      });
+
 let uuid = localStorage.getItem("uuid");
 if (!uuid){
   uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
