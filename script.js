@@ -43,7 +43,7 @@ $("#login").click(()=>{
 
 $("#logout").click(()=> {
           firebase.auth().signOut();
-          self.userName =  'user-' + localStorage.getItem("uuid");
+          self.userName =  localStorage.getItem("uuid");
           $('#uuid').text(`${self.userName}`);
       })
 
