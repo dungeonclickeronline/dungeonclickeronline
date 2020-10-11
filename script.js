@@ -53,6 +53,8 @@ $("#logout").click(()=> {
         }
       });
 
+playerInfo = firebase.database();
+
 var gameState = {
   gold: 0,
   damagePerSecond: 0,
@@ -63,7 +65,8 @@ var gameState = {
   level: 1,
   monDPS: 1,
   monsterHealth: 25,
-  position: "Neutral"
+  position: "Neutral",
+  playerInfo: firebase.database();
 };
 
 var getSidekickCost = function(){
