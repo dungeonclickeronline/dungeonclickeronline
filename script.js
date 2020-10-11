@@ -63,6 +63,7 @@ let myDatabase = firebase.database();
 
 
 var gameState = {
+  name: self.userName,
   gold: 0,
   damagePerSecond: 0,
   attack: 1,
