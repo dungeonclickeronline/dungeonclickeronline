@@ -34,6 +34,7 @@ var google_provider = new firebase.auth.GoogleAuthProvider();
 
 $("#login").click(()=>{
   firebase.auth().signInWithRedirect(google_provider);
+  $("#login").css('display','none');
 });
 
  firebase.auth().onAuthStateChanged(user => {
