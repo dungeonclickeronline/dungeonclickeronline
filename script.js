@@ -89,7 +89,7 @@ var getClickCost = function(){
 }
 
 var renderGameState = function(gameState){
-  $("#uuid").html(uuid);
+  $("#uuid").html(self.username);
   $("#attack").html(gameState.attack);
   $("#dps").html(gameState.damagePerSecond);
   $("#money").html(gameState.gold.toFixed(2));
