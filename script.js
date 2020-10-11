@@ -34,8 +34,13 @@ var google_provider = new firebase.auth.GoogleAuthProvider();
 
 $("#login").click(()=>{
   firebase.auth().signInWithRedirect(google_provider);
-  $("#login").css('display','none');
 });
+
+$("#logout").click(()=> {
+          firebase.auth().signOut();
+          self.userName =  'user-' + localStorage.getItem("uuid");
+          $('#uuid').text(`${self.userName}`);
+      })
 
  firebase.auth().onAuthStateChanged(user => {
         if (!!user){
