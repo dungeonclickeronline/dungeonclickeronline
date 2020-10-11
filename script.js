@@ -15,6 +15,14 @@
 // Player in attack or defend mode
 // Fixed Price Scaling in Defend and attack mode
 
+let uuid = localStorage.getItem("uuid");
+if (!uuid){
+  uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
+  localStorage.setItem("uuid", uuid);
+}
+
+console.log(uuid);
+
 const firebaseConfig = {
   apiKey: "AIzaSyCzpYXayWSL5Pf6lj2IFTj0qVIIUeGwmsg",
   authDomain: "webappproject-7ac77.firebaseapp.com",
@@ -44,15 +52,6 @@ $("#login").click(()=>{
             $('#uuid').text(`${self.userName}`);
         }
       });
-
-let uuid = localStorage.getItem("uuid");
-if (!uuid){
-  uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
-  localStorage.setItem("uuid", uuid);
-}
-
-console.log(uuid);
-
 
 var gameState = {
   gold: 0,
