@@ -19,7 +19,7 @@ let uuid = localStorage.getItem("uuid");
 if (!uuid){
   uuid = `uuid-${Math.floor(1000000000*Math.random())}`;
   localStorage.setItem("uuid", uuid);
- $('#uuid').text(`${self.userName}`););
+ $('#uuid').text(`${self.userName}`);
 }
 console.log(uuid);
 
