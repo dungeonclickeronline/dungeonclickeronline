@@ -220,6 +220,7 @@ var gameTick = function(){
   gameState.gold += gameState.damagePerSecond;
   if(gameState.health <= 0){
     alert("You are dead, Game Over");
+    $("#score").html(myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level));
     gameState.health = 100;
     gameState.healthMax = 100;
     gameState.healthLevel = 1;
@@ -237,9 +238,9 @@ var gameTick = function(){
   }
   if(gameState.monsterHealth < 1){
     alert("The monster has been slain, you are rewarded " + 50 * gameState.level + " gold" );
-    myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
     gameState.gold += 50 * gameState.level;
     gameState.level += 1;
+    myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
     if(gameState.position == "Defensive"){
       gameState.monDPS += .5;
     }
