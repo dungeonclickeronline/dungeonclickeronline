@@ -240,7 +240,9 @@ var gameTick = function(){
     alert("The monster has been slain, you are rewarded " + 50 * gameState.level + " gold" );
     gameState.gold += 50 * gameState.level;
     gameState.level += 1;
-    myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
+    myDatabase.ref("players/").child("level").once("value", ss=>{
+      db.ref("level").set(gameState.level);
+    }
     if(gameState.position == "Defensive"){
       gameState.monDPS += .5;
     }
@@ -258,6 +260,9 @@ var gameTick = function(){
 var clickHandler = function(){
   console.log("attack");
   gameState.gold = gameState.gold + gameState.attack;
+   myDatabase.ref("players/").child("gold").once("value", ss=>{
+      db.ref("gold").set(gameState.gold);
+    }
   gameState.monsterHealth = gameState.monsterHealth - gameState.attack;
   if(gameState.monsterHealth < 1){
     alert("The monster has been slain, you are rewarded " + 50 * gameState.level + " gold" );
