@@ -262,7 +262,7 @@ var clickHandler = function(){
   gameState.gold = gameState.gold + gameState.attack;
    myDatabase.ref("players/").child("gold").once("value", ss=>{
       db.ref("gold").set(gameState.gold);
-    }
+    });
   gameState.monsterHealth = gameState.monsterHealth - gameState.attack;
   if(gameState.monsterHealth < 1){
     alert("The monster has been slain, you are rewarded " + 50 * gameState.level + " gold" );
