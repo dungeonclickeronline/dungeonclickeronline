@@ -242,7 +242,7 @@ var gameTick = function(){
     gameState.level += 1;
     myDatabase.ref("players/").child("level").once("value", ss=>{
       db.ref("level").set(gameState.level);
-    }
+    });
     if(gameState.position == "Defensive"){
       gameState.monDPS += .5;
     }
