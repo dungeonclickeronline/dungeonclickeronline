@@ -76,7 +76,7 @@ var gameState = {
   position: "Neutral"
 };
 
-db.ref("players/" + gameState.name).child("level").set(gameState.level);
+myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
 
 var getSidekickCost = function(){
   if(gameState.position == "Offensive"){
