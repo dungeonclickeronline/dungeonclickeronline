@@ -76,7 +76,7 @@ var gameState = {
   position: "Neutral"
 };
 
-myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
+myDatabase.ref("players/" + gameState.name);
 
 var getSidekickCost = function(){
   if(gameState.position == "Offensive"){
@@ -237,6 +237,7 @@ var gameTick = function(){
   }
   if(gameState.monsterHealth < 1){
     alert("The monster has been slain, you are rewarded " + 50 * gameState.level + " gold" );
+    myDatabase.ref("players/" + gameState.name).child("level").set(gameState.level);
     gameState.gold += 50 * gameState.level;
     gameState.level += 1;
     if(gameState.position == "Defensive"){
